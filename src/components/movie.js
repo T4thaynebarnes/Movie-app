@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Stars from "./stars";
 import ReviewForm from "./review-form";
 import ReviewList from "./review-list";
+
+// ***8 tried to get the images to work, on this particular api it requires another request and it will not authorize my token or key it gives me?
 function Movie() {
   // setting the state to a value in this case an empty array
   const [movies, setMoviesState] = useState([]);
@@ -78,7 +80,7 @@ function Movie() {
                     >
                       <img
                         className="card-img-top"
-                        src={movie.title}
+                        src={movie.poster_path}
                         alt={movie.title}
                       ></img>
 

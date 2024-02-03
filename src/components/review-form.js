@@ -8,6 +8,7 @@ const ReviewForm = ({ value, movie }) => {
   const [review, setReviewState] = useState("");
   const [reviews, setReviews] = useState([]);
 
+  // this function takes in the inputed value of the text box from the user
   const updateReview = () => {
     const textAreaValue = document.getElementById(
       `review-text-${movie.id}`
