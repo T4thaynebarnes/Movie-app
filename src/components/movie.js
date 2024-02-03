@@ -48,7 +48,7 @@ function Movie() {
   // end of posting function
   // considered a hook: performing side-effect in a functional component. setting the state to an array of the data from api in getMovies function
   useEffect(() => {
-    console.log("updated state", movies);
+    console.log("value of movies in useEffect()", movies);
     getMovies();
   }, []);
 
@@ -66,40 +66,43 @@ function Movie() {
         return (
           <div key={index}>
             <div id="background" className="container-fluid">
-              <div className="row">
-                <div className="col-sm">
-                  <div
-                    className="card container-fluid"
-                    style={{
-                      width: "30rem",
-                      borderRadius: "4px",
-                    }}
-                  >
-                    <img
-                      className="card-img-top"
-                      src={movie.title}
-                      alt={movie.title}
-                    ></img>
+              <div className="container-fluid">
+                <div className="row-fluid">
+                  <div className="col-sm">
+                    <div
+                      className="card container-fluid"
+                      style={{
+                        width: "30rem",
+                        borderRadius: "4px",
+                      }}
+                    >
+                      <img
+                        className="card-img-top"
+                        src={movie.title}
+                        alt={movie.title}
+                      ></img>
 
-                    <div className="card-body">
-                      <h5 className="card-title">{movie.title}</h5>
-                      <p className="card-text">{movie.overview}</p>
-                      <div className="card-text">
-                        Release Date: {movie.release_date}
-                      </div>
-                      <div className="card-text">
-                        Movie Critics rated it a {movie.vote_average} out of 10!{" "}
-                      </div>
-                      <div>
-                        <h5 className="card-text">Rate this Flick!</h5>
-                        <Stars />
-                        <h5>Leave a review:</h5>
-                      </div>
-                      <div>
-                        <ReviewList reviews={reviews} />
-                      </div>
-                      <div className="mt-4">
-                        <ReviewForm movie={movie} showReviews={showReviews} />
+                      <div className="card-body">
+                        <h5 className="card-title">{movie.title}</h5>
+                        <p className="card-text">{movie.overview}</p>
+                        <div className="card-text">
+                          Release Date: {movie.release_date}
+                        </div>
+                        <div className="card-text">
+                          Movie Critics rated it a {movie.vote_average} out of
+                          10!{" "}
+                        </div>
+                        <div>
+                          <h5 className="card-text">Rate this Flick!</h5>
+                          <Stars />
+                          <h5>Leave a review:</h5>
+                        </div>
+                        <div>
+                          <ReviewList reviews={reviews} />
+                        </div>
+                        <div className="mt-4">
+                          <ReviewForm movie={movie} showReviews={showReviews} />
+                        </div>
                       </div>
                     </div>
                   </div>
